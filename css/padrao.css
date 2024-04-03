@@ -1,73 +1,78 @@
 .barra {
     width: 100%;
     height: 100px;
-    background-color: rgb(107, 117, 202);
+    background-color: rgb(121, 185, 140);
     text-align: center;
 }
 
-.mobile {
+.mobile{
     font-size: 60px;
-    color: black;
+    color: rgb(7, 56, 3);
     text-align: center;
 }
-
-.tablet {
+.tablet{
     display: none;
-
 }
-
-.desktop {
+.desktop{
     display: none;
-
 }
-
 .conteudo{
     width: 100%;
-    background-color: rgb(81, 255, 0);
+    background-color: rgb(196, 255, 230);
 }
-
 .botoes{
     width: 100%;
     height: 30px;
-    background-color: aqua;
+    background-color: rgb(0, 184, 184);
     font-size: 28px;
     padding-top: 2px;
     padding-bottom: 4px;
-
 }
-
+.abageral{
+    width: 100%;
+    height: 400px;
+    display: none;
+}
+.aba1 {
+    background-color: rgb(255, 175, 175);
+}
+.aba2 {
+    background-color: rgb(255, 106, 106);
+}
+.aba3 {
+    background-color: rgb(245, 236, 102);
+}
+.aba4 {
+    background-color: rgb(243, 237, 184);
+}
 @media (min-width: 800px) {
-    .barra {
+    .barra{
         height: 150px;
-        background-color: tomato;
+        background-color: rgb(161, 216, 253);
     }
-
     .mobile {
         display: none;
     }
-
     .tablet {
         display: inline;
-        font-size: 70px;
-        color: brown;
-        text-align: center;
+        font-size: 30px;
+        color: rgb(5, 0, 80);
     }
-
+    
 }
 
-@media (min-width:1228px) {
+@media (min-width: 1228px){
     .barra {
         height: 200px;
-        background-color: aquamarine;
+        background-color: cadetblue;
     }
-    .tablet {
+    #tablet {
         display: none;
     }
-    .desktop {
+    #desktop {
         display: inline;
-        font-size: 80px;
-        color: yellowgreen;
-        text-align: center;
+        font-size: 70px;
+        color: rgb(155, 221, 229);
+        text-align: center; 
     }
 }
-

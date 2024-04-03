@@ -1,34 +1,64 @@
 imprime = (msg) => console.log(msg);
-
-fazerSorteio = () => {
+const data = new Date();
+function hora_atual(){
+    const data = new Date();
+    setTimeout(() =>{    
+   document.getElementById("h").innerHTML = data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
+   hora_atual();
+  }, 1000);
+}
+fazerSorteio = ()  => {
     let num1 = document.getElementById("inicio").value;
     let num2 = document.getElementById("fim").value;
     num2 = Number(num2) + 1;
-    let sorteio = Math.floor( Math.random(inicio.fim+1) * Number(num2) - Number(num1) );
+    let sorteio = Math.floor(Math.random() * Number(num2) - Number(num1));
 
-    document.getElementById("resultado").innerHTML = sorteio;
-
+    document.getElementById("resultado").innerHTML = sorteio;   
 }
 function escolher_aba(btn){
     for(let i = 1; i <= 4; i++){
         let id_btn = "btn"+i;
-        document.getElementById(id_btn).style.backgroundColor = "violet"
+        let id_aba = "ab"+i;
+        document.getElementById(id_btn).style.backgroundColor = "aqua";
         document.getElementById(id_btn).disabled = false;
+        document.getElementById(id_aba).style.display = "none";
     }
-   if(btn == "1"){
-    document.getElementById("btn1").style.backgroundColor = "red"
-    document.getElementById("btn1").disabled = true;
-   }
-   if(btn == "2"){
-    document.getElementById("btn2").style.backgroundColor = "red"
-    document.getElementById("btn2").disabled = true;
-   }
-   if(btn == "3"){
-    document.getElementById("btn3").style.backgroundColor = "red"
-    document.getElementById("btn3").disabled = true;
-   }
-   if(btn == "4"){
-    document.getElementById("btn4").style.backgroundColor = "red"
-    document.getElementById("btn4").disabled = true;
-   }
+    if(btn == "1"){
+        document.getElementById("btn1").style.backgroundColor = "aquamarine";
+        document.getElementById("btn1").disabled = true;
+        document.getElementById("ab1").style.display = "block";
     }
+    if(btn == "2"){
+        document.getElementById("btn2").style.backgroundColor = "aquamarine";
+        document.getElementById("btn2").disabled = true;
+        document.getElementById("ab2").style.display = "block";
+    }
+    if(btn == "3"){
+        document.getElementById("btn3").style.backgroundColor = "aquamarine";
+        document.getElementById("btn3").disabled = true;
+        document.getElementById("ab3").style.display = "block";
+    }
+    if(btn == "4"){
+        document.getElementById("btn4").style.backgroundColor = "aquamarine";
+        document.getElementById("btn4").disabled = true;
+        document.getElementById("ab4").style.display = "block";
+    }
+}
+
+let contador = null;
+let inicio = 0;
+let fim = 0;
+function contagem(){
+    if(inicio == Number (fim) + 1) contador.clearInvernal();
+    else{
+        document.getElementById("valor").innerHTML = inicio;
+        inicio++;
+    }
+}
+function iniciar(){
+    inicio = document.getElementById("inicio").value;
+    fim = document.getElementById("fim").value;
+    contador = setInterval(() => {
+        contagem();
+    }, 1000);
+}
